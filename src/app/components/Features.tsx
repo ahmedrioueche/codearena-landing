@@ -1,19 +1,32 @@
+"use client";
 import React, { ReactElement } from "react";
+import { motion, Variants } from "framer-motion"; // Import Framer Motion
 import { Brain, Trophy, Rocket } from "lucide-react";
 
 interface FeatureCardProps {
   icon: ReactElement; // Expects a rendered React element (e.g., <Brain />)
   title: string;
   description: string;
+  variants: Variants; // Add variants prop for animations
+  custom: number; // Add custom prop for animation delay
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({
   icon,
   title,
   description,
+  variants,
+  custom,
 }) => {
   return (
-    <div className="relative transition-all duration-300 transform group">
+    <motion.div
+      className="relative transition-all duration-300 transform group"
+      variants={variants} // Apply animation variants
+      initial="offscreen" // Initial animation state
+      whileInView="onscreen" // Animation when in view
+      viewport={{ once: true, amount: 0.5 }} // Trigger animation once
+      custom={custom} // Pass custom delay
+    >
       {/* Animated border gradient - dimmed down */}
       <div
         className={`absolute -inset-0.5 bg-gradient-to-r from-blue-500/40 to-purple-600/40 rounded-lg blur opacity-0 group-hover:opacity-70 transition-all duration-300 animate-gradient-xy`}
@@ -35,7 +48,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           {description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -61,6 +74,58 @@ const FeaturesSection = () => {
     },
   ];
 
+  // Define different animation variants for each card
+  const cardVariants: Variants[] = [
+    {
+      offscreen: {
+        opacity: 0,
+        x: -50, // Slide in from the left
+      },
+      onscreen: {
+        opacity: 1,
+        x: 0,
+        transition: {
+          type: "spring",
+          bounce: 0.4,
+          duration: 0.8,
+          delay: 0.2, // Delay for the first card
+        },
+      },
+    },
+    {
+      offscreen: {
+        opacity: 0,
+        y: 50, // Slide in from the bottom
+      },
+      onscreen: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: "spring",
+          bounce: 0.4,
+          duration: 0.8,
+          delay: 0.4, // Delay for the second card
+        },
+      },
+    },
+    {
+      offscreen: {
+        opacity: 0,
+        x: 50, // Slide in from the right
+      },
+      onscreen: {
+        opacity: 1,
+        x: 0,
+        transition: {
+          type: "spring",
+          bounce: 0.4,
+          duration: 0.8,
+          delay: 0.6, // Delay for the third card
+        },
+      },
+    },
+  ];
+
   return (
     <div className="py-12 relative z-10 mt-10" id="features">
       <h2 className="text-3xl font-bold text-center mb-12">
@@ -70,7 +135,12 @@ const FeaturesSection = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature, i) => (
-          <FeatureCard key={i} {...feature} />
+          <FeatureCard
+            key={i}
+            {...feature}
+            variants={cardVariants[i]} // Pass unique variants for each card
+            custom={i} // Pass custom delay
+          />
         ))}
       </div>
     </div>

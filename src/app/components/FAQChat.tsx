@@ -5,6 +5,7 @@ import Image from "next/image";
 import { CheckCheck, Maximize2, Minimize2 } from "lucide-react";
 import { getGeminiReply } from "@/utils/gemini";
 import { faqs } from "@/constants/faqs";
+import { motion, Variants } from "framer-motion";
 
 interface Message {
   text: string;
@@ -164,6 +165,47 @@ const FAQChat = () => {
     setIsFullScreen((prev) => !prev);
   };
 
+  useEffect(() => {
+    const faqMessages: Message[] = faqs.flatMap((faq) => [
+      {
+        text: faq.question,
+        isUser: true,
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+        isFAQ: true,
+      },
+      {
+        text: faq.answer as string,
+        isUser: false,
+        timestamp: new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        }),
+        isFAQ: true,
+      },
+    ]);
+
+    setMessages((prev) => [...prev, ...faqMessages]);
+  }, []);
+
+  const messageVariants: Variants = {
+    offscreen: (isUser: boolean) => ({
+      opacity: 0,
+      x: isUser ? 50 : -50,
+    }),
+    onscreen: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    },
+  };
+
   // Typing Animation Component
   const TypingAnimation = () => {
     return (
@@ -263,37 +305,44 @@ const FAQChat = () => {
                   "linear-gradient(135deg, #001122 0%, #001A2F 50%, #00253D 100%)",
               }}
             >
-              {messages.map((message, index) => (
-                <div
-                  key={index}
-                  className={`flex ${
-                    message.isUser ? "justify-end" : "justify-start"
-                  }`}
-                >
-                  <div className="max-w-[75%] space-y-1">
-                    <div
-                      className={`p-2 rounded-lg ${
-                        message.isUser
-                          ? "bg-purple-800 text-white"
-                          : "bg-[#202c33] text-white"
-                      }`}
-                    >
-                      <p className="text-sm">{message.text}</p>
+              <div className="overflow-clip">
+                {messages.map((message, index) => (
+                  <motion.div
+                    key={index}
+                    className={`flex overflow-x-hidden  ${
+                      message.isUser ? "justify-end" : "justify-start"
+                    }`}
+                    variants={messageVariants} // Apply animation variants
+                    initial="offscreen" // Initial animation state
+                    whileInView="onscreen" // Animation when in view
+                    viewport={{ once: true, amount: 0.5 }} // Trigger animation once
+                    custom={message.isUser} // Pass custom prop for direction
+                  >
+                    <div className="max-w-[75%] space-y-1">
+                      <div
+                        className={`p-2 rounded-lg ${
+                          message.isUser
+                            ? "bg-purple-800 text-white"
+                            : "bg-[#202c33] text-white"
+                        }`}
+                      >
+                        <p className="text-sm">{message.text}</p>
+                      </div>
+                      <div
+                        className={`flex items-center text-xs ${
+                          message.isUser ? "justify-end" : "justify-start"
+                        } text-[#8696a0] space-x-1`}
+                      >
+                        <span>{message.timestamp}</span>
+                        {message.isUser && (
+                          <CheckCheck size={14} className="text-[#53bdeb]" />
+                        )}
+                      </div>
                     </div>
-                    <div
-                      className={`flex items-center text-xs ${
-                        message.isUser ? "justify-end" : "justify-start"
-                      } text-[#8696a0] space-x-1`}
-                    >
-                      <span>{message.timestamp}</span>
-                      {message.isUser && (
-                        <CheckCheck size={14} className="text-[#53bdeb]" />
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-              {isTyping && <TypingAnimation />}
+                  </motion.div>
+                ))}
+                {isTyping && <TypingAnimation />}
+              </div>
             </div>
 
             {/* Chat Input */}
