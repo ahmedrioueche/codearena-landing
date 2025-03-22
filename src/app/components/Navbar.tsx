@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Code, Menu, LogIn, X } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -10,14 +10,34 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
   const { isMobile } = useScreen();
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Close the menu when clicking outside of it
+  useEffect(() => {
+    const handleClickOutside = (event: { target: any }) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Add event listener when the menu is open
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    // Clean up the event listener
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   return (
-    <nav className="w-full py-4 z-50 backdrop-blur-sm fixed top-0 left-0">
-      <div className="container mx-auto flex justify-between items-center px-4 md:px-8">
+    <nav className="w-full py-4 z-50 backdrop-blur-sm">
+      <div className="container mx-auto flex justify-between items-center">
         {/* Logo and Brand Name */}
         <div
           className="flex items-center cursor-pointer"
@@ -42,9 +62,10 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div
+          ref={menuRef}
           className={`md:flex items-center space-x-4 ${
             isMenuOpen
-              ? "absolute top-16 left-0 w-full bg-gray-900 bg-opacity-95 p-4 flex flex-col"
+              ? "absolute top-16 left-0 w-full bg-dark-background/60 bg-opacity-80 p-4 flex flex-row space-x-4 items-center justify-center"
               : "hidden"
           }`}
         >
