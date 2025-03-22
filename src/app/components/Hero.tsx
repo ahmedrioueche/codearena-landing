@@ -7,7 +7,7 @@ const HeroBanner = () => {
   const router = useRouter();
 
   return (
-    <section className="relative mt-20 mb-24">
+    <section className="relative mt-16 md:mt-20 mb-24">
       {/* Main Content */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left Column: Text Content */}

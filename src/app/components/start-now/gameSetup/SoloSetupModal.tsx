@@ -28,7 +28,7 @@ const SoloMatchSetupModal: React.FC<{
       onClick={handleBackdropClick}
     >
       <div
-        className="relative w-full max-w-3xl max-h-[95vh] bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-xl transition-opacity duration-300 border border-gray-700 custom-scrollbar"
+        className="relative w-full max-w-3xl max-h-[92vh] bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-xl transition-opacity duration-300 border border-gray-700 custom-scrollbar"
         style={{
           background:
             "linear-gradient(135deg, #001122 0%, #001A2F 50%, #00253D 100%)",

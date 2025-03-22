@@ -9,18 +9,17 @@ const oswald = Oswald({
 });
 
 export const metadata: Metadata = {
-  title: "Home Page - CodeArena",
+  title: "CodeArena",
   description:
     "Master coding skills with CodeArena's challenges and competitions.",
   keywords: ["coding", "programming", "challenges", "CodeArena"],
   openGraph: {
-    title: "Home Page - CodeArena",
+    title: "CodeArena",
     description:
       "Master coding skills with CodeArena's challenges and competitions.",
     images: "/logo.svg",
   },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,7 +35,7 @@ export default function RootLayout({
         <link rel="icon" href="/logo.svg" />
       </head>
       <body
-        className="overflow-x-hidden md:px-24 px-6"
+        className="md:px-24 px-10"
         style={{
           background:
             "linear-gradient(135deg, #011C37 0%, #012A4A 50%, #013A63 100%)",

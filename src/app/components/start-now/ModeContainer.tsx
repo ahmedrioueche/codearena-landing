@@ -2,12 +2,12 @@
 import { lazy, Suspense, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import ModeCard from "./ModeCard";
-import BattleModeSetupModal from "./gameSetup/BattleSetupModal";
-import CollabModeSetupModal from "./gameSetup/CollabSetupModal";
 import { GameMode } from "@/types/game/game";
 import { modes } from "@/constants/modes";
 
 const SoloMatchSetupModal = lazy(() => import("./gameSetup/SoloSetupModal"));
+const BattleModeSetupModal = lazy(() => import("./gameSetup/BattleSetupModal"));
+const CollabModeSetupModal = lazy(() => import("./gameSetup/CollabSetupModal"));
 
 // Animation variants for the cards
 const cardVariants: Variants = {
