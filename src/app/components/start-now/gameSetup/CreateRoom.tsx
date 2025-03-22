@@ -53,7 +53,7 @@ const CreateRoom = ({ gameMode }: { gameMode: GameMode }) => {
         </div>
       </div>
       <div className="mt-4">
-        <PlayersConfig configMode="create" gameMode={undefined} />
+        <PlayersConfig configMode="create" gameMode={"battle"} />
       </div>
       <div className="mt-8">
         <MatchConfig gameMode={gameMode} />
