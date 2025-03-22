@@ -305,11 +305,11 @@ const FAQChat = () => {
                   "linear-gradient(135deg, #001122 0%, #001A2F 50%, #00253D 100%)",
               }}
             >
-              <div className="overflow-clip">
+              <div className="overflow-hidden hide-scrollbar">
                 {messages.map((message, index) => (
                   <motion.div
                     key={index}
-                    className={`flex overflow-x-hidden  ${
+                    className={`flex overflow-hidden hide-scrollbar  ${
                       message.isUser ? "justify-end" : "justify-start"
                     }`}
                     variants={messageVariants} // Apply animation variants
