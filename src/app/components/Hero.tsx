@@ -7,13 +7,13 @@ const HeroBanner = () => {
   const router = useRouter();
 
   return (
-    <section className="relative mt-16 mb-24">
+    <section className="relative mt-32 mb-24 px-4">
       {/* Main Content */}
-      <div className="grid md:grid-cols-2 gap-8 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left Column: Text Content */}
         <div className="space-y-6 z-10 text-center md:text-left">
           {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
             <span className="text-white">Master Coding in the</span>
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-400 to-pink-300">
               Ultimate Arena
@@ -21,7 +21,7 @@ const HeroBanner = () => {
           </h1>
 
           {/* Description */}
-          <p className="text-lg text-blue-100 opacity-90 max-w-lg mx-auto md:mx-0">
+          <p className="text-base sm:text-lg text-blue-100 opacity-90 max-w-lg mx-auto md:mx-0">
             Challenge yourself, compete with others, and elevate your
             programming skills with AI-powered guidance tailored to your
             learning style.
@@ -72,15 +72,13 @@ const HeroBanner = () => {
 
         {/* Right Column: Code Challenge Card */}
         <div className="relative z-10 mt-8 md:mt-0">
-          <article className="relative bg-gray-900 bg-opacity-50 p-6 rounded-lg border border-gray-700 shadow-xl backdrop-blur-sm">
-            {/* Decorative Elements */}
+          <article className="relative bg-gray-900 bg-opacity-50 p-4 sm:p-6 rounded-lg border border-gray-700 shadow-xl backdrop-blur-sm">
             <div className="absolute -top-3 -left-3 w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 to-purple-500" />
             <div className="absolute -bottom-3 -right-3 w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-400" />
-
             {/* Challenge Details */}
             <div className="space-y-4">
               <header className="flex justify-between items-center">
-                <h2 className="text-sm text-blue-300 font-medium">
+                <h2 className="text-xs sm:text-sm text-blue-300 font-medium">
                   Challenge #42: Optimization Algorithms
                 </h2>
                 <div className="text-xs px-2 py-1 bg-blue-900 bg-opacity-50 rounded text-blue-300">
@@ -89,7 +87,7 @@ const HeroBanner = () => {
               </header>
 
               {/* Code Snippet */}
-              <pre className="bg-gray-800 bg-opacity-70 rounded p-4 font-mono text-sm text-blue-100">
+              <pre className="bg-gray-800 bg-opacity-70 rounded p-3 sm:p-4 font-mono text-xs sm:text-sm text-blue-100 overflow-x-auto whitespace-pre-wrap">
                 <code>
                   <div className="text-blue-300">
                     function optimizeRoute(points) {"{"}
@@ -104,13 +102,13 @@ const HeroBanner = () => {
               </pre>
 
               {/* AI Assistant */}
-              <footer className="flex justify-between items-center text-sm">
+              <footer className="flex justify-between items-center text-xs sm:text-sm">
                 <div className="text-blue-200">
                   <span className="text-green-400">●</span> AI Assistant
                   Available
                 </div>
                 <button
-                  className="px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded text-white text-sm"
+                  className="px-2 py-1 sm:px-3 sm:py-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded text-white text-xs sm:text-sm"
                   aria-label="Solve Now"
                 >
                   Solve Now
@@ -120,8 +118,8 @@ const HeroBanner = () => {
           </article>
 
           {/* Decorative Blurred Circles */}
-          <div className="absolute -top-6 right-12 w-32 h-32 bg-purple-600 rounded-full blur-3xl opacity-20" />
-          <div className="absolute bottom-10 -left-12 w-24 h-24 bg-blue-400 rounded-full blur-3xl opacity-20" />
+          <div className="absolute -top-6 right-12 w-16 h-16 bg-purple-600 rounded-full blur-3xl opacity-20" />
+          <div className="absolute bottom-10 -left-12 w-16 h-16 bg-blue-400 rounded-full blur-3xl opacity-20" />
         </div>
       </div>
     </section>

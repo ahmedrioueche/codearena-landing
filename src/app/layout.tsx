@@ -27,8 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${oswald.className} dark `}>
+    <html lang="en" className={`${oswald.className} dark`}>
       <head>
+        {/* Viewport Meta Tag for Responsiveness */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         {/* Favicon Link */}
         <link rel="icon" href="/logo.svg" />
       </head>
