@@ -1,0 +1,126 @@
+{
+  "languages": ["en", "fr", "ar"],
+  "defaultLanguage": "en",
+  "translations": {
+    "contact": {
+      "en": "Contact",
+      "fr": "Contact",
+      "ar": "اتصل"
+    },
+    "features": {
+      "en": "Features",
+      "fr": "Fonctionnalités",
+      "ar": "الميزات"
+    },
+    "pricing": {
+      "en": "Pricing",
+      "fr": "Tarification",
+      "ar": "التسعير"
+    },
+    "sign_in": {
+      "en": "Sign in",
+      "fr": "Se connecter",
+      "ar": "تسجيل الدخول"
+    },
+    "free_trial": {
+      "en": "Free Trial",
+      "fr": "Essai gratuit",
+      "ar": "تجربة مجانية"
+    },
+    "language": {
+      "en": "Language",
+      "fr": "Langue",
+      "ar": "لغة"
+    },
+    "banner_title": {
+      "en": "Build Your Own Marketing Buddy",
+      "fr": "Créez Votre Propre Assistant Marketing",
+      "ar": "قم ببناء مساعد التسويق الخاص بك"
+    },
+    "banner_subtitle": {
+      "en": "Integrate Wizabot with Leading Platforms,",
+      "fr": "Intégrez votre bot avec n'importe quelle plateforme qui",
+      "ar": "قم بدمج بوتك مع أي منصة"
+    },
+    "banner_tagline": {
+      "en": "Expand Your Business Reach",
+      "fr": "qui vous convient et regardez",
+      "ar": "التي تناسبك وشاهد"
+    },
+    "maximize_returns": {
+      "en": "and Maximize Your Returns!",
+      "fr": "La magie",
+      "ar": "السحر"
+    },
+    "get_started_for_free": {
+      "en": "Get Started For Free",
+      "fr": "Commencez Gratuitement",
+      "ar": "ابدأ مجانًا"
+    },
+    "watch_video": {
+      "en": "Watch Tutorial",
+      "fr": "Regarder le tutoriel",
+      "ar": "شاهد البرنامج التعليمي"
+    },
+    "cta_title": {
+      "en": "Quick Setup for a Lifetime of Productivity",
+      "fr": "Configuration Rapide pour la Productivité",
+      "ar": "إعداد سريع للإنتاجية"
+    },
+    "cta_subtitle": {
+      "en": "Spend 5 minutes to set up your business account so you can relax for the rest of your journey",
+      "fr": "Passez 5 minutes à configurer votre compte professionnel pour pouvoir vous détendre pendant le reste de votre voyage",
+      "ar": "اقضِ 5 دقائق في إعداد حساب عملك حتى تتمكن من الاسترخاء لبقية رحلتك"
+    },
+    "getInTouch": {
+      "en": "Get in touch",
+      "fr": "Contactez-nous",
+      "ar": "تواصل معنا"
+    },
+    "contactDescription": {
+      "en": "Contact information",
+      "fr": "Coordonnées",
+      "ar": "معلومات الاتصال"
+    },
+    "firstName": {
+      "en": "First Name",
+      "fr": "Prénom",
+      "ar": "الاسم الأول"
+    },
+    "lastName": {
+      "en": "Last Name",
+      "fr": "Nom de famille",
+      "ar": "الاسم العائلي"
+    },
+    "email": {
+      "en": "Email",
+      "fr": "Email",
+      "ar": "بريد إلكتروني"
+    },
+    "subject": {
+      "en": "Subject",
+      "fr": "Sujet",
+      "ar": "موضوع"
+    },
+    "message": {
+      "en": "Message",
+      "fr": "Message",
+      "ar": "رسالة"
+    },
+    "submit": {
+      "en": "Submit",
+      "fr": "Soumettre",
+      "ar": "إرسال"
+    },
+    "how_it_works": {
+      "en": "How it works",
+      "fr": "Comment ça marche",
+      "ar": "كيف يعمل"
+    },
+    "chat_with_wizabot": {
+      "en": "Chat with Wizabot",
+      "fr": "Chatter avec Wizabot",
+      "ar": "دردشة مع ويزاربوت"
+    }
+  }
+}

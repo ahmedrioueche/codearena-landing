@@ -1,0 +1,10 @@
+{
+  "name": "test",
+  "location": "src/langs",
+  "port": 6757,
+  "typeSafe": true,
+  "llm_config": {
+    "model": "gemini",
+    "api_key": "ENV.{{GEMINI_KEY}}"
+  }
+}
