@@ -51,7 +51,6 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
     </motion.div>
   );
 };
-
 const FeaturesSection = () => {
   const features = [
     {
@@ -74,53 +73,53 @@ const FeaturesSection = () => {
     },
   ];
 
-  // Define different animation variants for each card
+  // Updated cardVariants with fade-in and scale-up animation
   const cardVariants: Variants[] = [
     {
       offscreen: {
         opacity: 0,
-        x: -50, // Slide in from the left
+        scale: 0.9,
       },
       onscreen: {
         opacity: 1,
-        x: 0,
+        scale: 1,
         transition: {
           type: "spring",
           bounce: 0.4,
           duration: 0.8,
-          delay: 0.2, // Delay for the first card
+          delay: 0.2,
         },
       },
     },
     {
       offscreen: {
         opacity: 0,
-        y: 50, // Slide in from the bottom
+        scale: 0.9,
       },
       onscreen: {
         opacity: 1,
-        y: 0,
+        scale: 1,
         transition: {
           type: "spring",
           bounce: 0.4,
           duration: 0.8,
-          delay: 0.4, // Delay for the second card
+          delay: 0.4,
         },
       },
     },
     {
       offscreen: {
         opacity: 0,
-        x: 50, // Slide in from the right
+        scale: 0.9,
       },
       onscreen: {
         opacity: 1,
-        x: 0,
+        scale: 1,
         transition: {
           type: "spring",
           bounce: 0.4,
           duration: 0.8,
-          delay: 0.6, // Delay for the third card
+          delay: 0.6,
         },
       },
     },
