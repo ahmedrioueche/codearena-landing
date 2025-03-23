@@ -2,33 +2,59 @@
 import React from "react";
 import { Play, Code } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion"; // Import Framer Motion
 
 const HeroBanner = () => {
   const router = useRouter();
 
   return (
-    <section className="relative mt-16 md:mt-20 mb-24">
+    <motion.section
+      className="relative mt-16 md:mt-20 mb-24"
+      initial={{ opacity: 0, y: 20 }} // Initial state
+      animate={{ opacity: 1, y: 0 }} // Animate in
+      transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.2 }} // Spring animation
+    >
       {/* Main Content */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left Column: Text Content */}
         <div className="space-y-6 z-10 text-center md:text-left">
           {/* Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+          <motion.h1
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
+            initial={{ scale: 0.9, opacity: 0 }} // Initial state
+            animate={{ scale: 1, opacity: 1 }} // Animate in
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 10,
+              delay: 0.4,
+            }} // Spring animation
+          >
             <span className="text-white">Master Coding in the</span>
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-400 to-pink-300">
               Ultimate Arena
             </span>
-          </h1>
+          </motion.h1>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-blue-100 opacity-90 max-w-lg mx-auto md:mx-0">
+          <motion.p
+            className="text-base sm:text-lg text-blue-100 opacity-90 max-w-lg mx-auto md:mx-0"
+            initial={{ opacity: 0, y: 10 }} // Initial state
+            animate={{ opacity: 1, y: 0 }} // Animate in
+            transition={{ duration: 0.6, delay: 0.6 }} // Smooth transition
+          >
             Challenge yourself, compete with others, and elevate your
             programming skills with AI-powered guidance tailored to your
             learning style.
-          </p>
+          </motion.p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start">
+          <motion.div
+            className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start"
+            initial={{ opacity: 0, y: 10 }} // Initial state
+            animate={{ opacity: 1, y: 0 }} // Animate in
+            transition={{ duration: 0.6, delay: 0.8 }} // Smooth transition
+          >
             <a
               href="/#start-now"
               className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-md text-white font-medium hover:opacity-90 transition-opacity flex items-center"
@@ -45,10 +71,15 @@ const HeroBanner = () => {
               <Play size={18} className="mr-2" aria-hidden="true" />
               <span>Signup for Free</span>
             </button>
-          </div>
+          </motion.div>
 
           {/* Developer Count */}
-          <div className="flex items-center space-x-4 pt-4 justify-center md:justify-start">
+          <motion.div
+            className="flex items-center space-x-4 pt-4 justify-center md:justify-start"
+            initial={{ opacity: 0, y: 10 }} // Initial state
+            animate={{ opacity: 1, y: 0 }} // Animate in
+            transition={{ duration: 0.6, delay: 1 }} // Smooth transition
+          >
             <div className="flex -space-x-2">
               {[1, 2, 3, 4].map((i) => (
                 <div
@@ -67,11 +98,21 @@ const HeroBanner = () => {
               Join <span className="font-bold">10,000+</span> developers
               improving their skills
             </p>
-          </div>
+          </motion.div>
         </div>
 
         {/* Right Column: Code Challenge Card */}
-        <div className="relative z-10 mt-8 md:mt-0">
+        <motion.div
+          className="relative z-10 mt-8 md:mt-0"
+          initial={{ opacity: 0, y: 20 }} // Initial state
+          animate={{ opacity: 1, y: 0 }} // Animate in
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+            delay: 1.2,
+          }} // Spring animation
+        >
           <article className="relative bg-gray-900 bg-opacity-50 p-4 sm:p-6 rounded-lg border border-gray-700 shadow-xl backdrop-blur-sm">
             <div className="absolute -top-3 -left-3 w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 to-purple-500" />
             <div className="absolute -bottom-3 -right-3 w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-pink-400" />
@@ -120,9 +161,9 @@ const HeroBanner = () => {
           {/* Decorative Blurred Circles */}
           <div className="absolute -top-6 right-12 w-16 h-16 bg-purple-600 rounded-full blur-3xl opacity-20" />
           <div className="absolute bottom-10 -left-12 w-16 h-16 bg-blue-400 rounded-full blur-3xl opacity-20" />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

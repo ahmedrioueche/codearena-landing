@@ -35,7 +35,7 @@ export default function RootLayout({
         <link rel="icon" href="/logo.svg" />
       </head>
       <body
-        className="md:px-24 px-10"
+        className="md:px-24 px-4"
         style={{
           background:
             "linear-gradient(135deg, #011C37 0%, #012A4A 50%, #013A63 100%)",
