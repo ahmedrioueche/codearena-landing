@@ -11,6 +11,7 @@ const SoloMatchSetupModal: React.FC<{
 
   const handleStartGame = () => {
     setIsGameStarted(true);
+    location.href = "https://codearena-delta.vercel.app/game/solo";
   };
 
   // Close modal when clicking outside
