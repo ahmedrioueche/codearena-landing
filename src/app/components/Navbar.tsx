@@ -4,13 +4,13 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Code, Menu, LogIn, X } from "lucide-react";
 import { useRouter } from "next/navigation";
-import useScreen from "../hooks/useScreen";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
-  const { isMobile } = useScreen();
   const menuRef = useRef<HTMLDivElement>(null);
+  const appUrl =
+    process.env.NEXT_PUBLIC_APP_URL || "https://codearena-delta.vercel.app";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -70,14 +70,14 @@ const Navbar = () => {
           }`}
         >
           <Link
-            href="/login"
+            href={`${appUrl}/auth/login`}
             className="text-blue-100 hover:text-blue-300 transition-colors flex items-center py-2"
           >
             <LogIn size={16} className="mr-1" />
             <span>Sign In</span>
           </Link>
           <Link
-            href="/signup"
+            href={`${appUrl}/auth/signup`}
             className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-md text-white hover:opacity-90 transition-opacity"
           >
             Get Started

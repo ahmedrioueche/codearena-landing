@@ -64,7 +64,11 @@ const HeroBanner = () => {
               <span>Start Your Journey</span>
             </a>
             <button
-              onClick={() => router.push("/auth/signup")}
+              onClick={() =>
+                (location.href =
+                  process.env.NEXT_PUBLIC_APP_URL ||
+                  "https://codearena-delta.vercel.app")
+              }
               className="px-6 py-3 border border-blue-300 rounded-md text-blue-200 font-medium hover:bg-blue-900 hover:bg-opacity-20 transition flex items-center"
               aria-label="Signup for Free"
             >
