@@ -48,7 +48,6 @@ const ModesContainer = () => {
             <div className="w-full md:w-3/4 lg:w-2/3">
               <ModeCard
                 {...mode}
-                isHorizontal={true}
                 onStartGame={(mode) => setIsSetupModalOpen(mode)}
               />
             </div>
