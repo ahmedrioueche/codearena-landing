@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Linkedin, Github, Code, Facebook } from "lucide-react";
 
