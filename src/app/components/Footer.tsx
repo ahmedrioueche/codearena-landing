@@ -1,5 +1,5 @@
 import React from "react";
-import { Linkedin, Github, Twitter, Mail, Code } from "lucide-react";
+import { Linkedin, Github, Twitter, Mail, Code, Facebook } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -7,63 +7,58 @@ const Footer = () => {
   // Links object
   const links = {
     platform: [
-      { href: "/features", label: "Features", ariaLabel: "Features" },
-      { href: "/challenges", label: "Challenges", ariaLabel: "Challenges" },
-      { href: "/learn", label: "Learn", ariaLabel: "Learn" },
-      { href: "/pricing", label: "Pricing", ariaLabel: "Pricing" },
+      { href: "#", label: "Features", ariaLabel: "Features" },
+      { href: "#", label: "Challenges", ariaLabel: "Challenges" },
+      { href: "#", label: "Learn", ariaLabel: "Learn" },
+      { href: "#", label: "Pricing", ariaLabel: "Pricing" },
     ],
     resources: [
       {
-        href: "/documentation",
+        href: "#",
         label: "Documentation",
         ariaLabel: "Documentation",
       },
-      { href: "/api", label: "API", ariaLabel: "API" },
-      { href: "/tutorials", label: "Tutorials", ariaLabel: "Tutorials" },
-      { href: "/blog", label: "Blog", ariaLabel: "Blog" },
+      { href: "#", label: "API", ariaLabel: "API" },
+      { href: "#", label: "Tutorials", ariaLabel: "Tutorials" },
+      { href: "#", label: "Blog", ariaLabel: "Blog" },
     ],
     company: [
-      { href: "/about", label: "About Us", ariaLabel: "About Us" },
-      { href: "/careers", label: "Careers", ariaLabel: "Careers" },
-      { href: "/press", label: "Press", ariaLabel: "Press" },
-      { href: "/contact", label: "Contact", ariaLabel: "Contact" },
+      { href: "#", label: "About Us", ariaLabel: "About Us" },
+      { href: "#", label: "Careers", ariaLabel: "Careers" },
+      { href: "#", label: "Press", ariaLabel: "Press" },
+      { href: "#", label: "Contact", ariaLabel: "Contact" },
     ],
     legal: [
       {
-        href: "/terms",
+        href: "#",
         label: "Terms of Service",
         ariaLabel: "Terms of Service",
       },
       {
-        href: "/privacy",
+        href: "#",
         label: "Privacy Policy",
         ariaLabel: "Privacy Policy",
       },
       {
-        href: "/cookie-policy",
+        href: "#",
         label: "Cookie Policy",
         ariaLabel: "Cookie Policy",
       },
-      { href: "/security", label: "Security", ariaLabel: "Security" },
+      { href: "#", label: "Security", ariaLabel: "Security" },
     ],
     social: [
       {
-        href: "https://github.com/yourprofile",
+        href: "https://github.com/ahmedrioueche",
         icon: <Github size={18} />,
         ariaLabel: "GitHub",
       },
       {
-        href: "https://twitter.com/yourprofile",
-        icon: <Twitter size={18} />,
-        ariaLabel: "Twitter",
+        href: "https://www.facebook.com/ahmed.69.420",
+        icon: <Facebook size={18} />,
+        ariaLabel: "Facebook",
       },
       {
-        href: "mailto:your@email.com",
-        icon: <Mail size={18} />,
-        ariaLabel: "Email",
-      },
-      {
-        href: "https://linkedin.com/in/yourprofile",
+        href: "https://linkedin.com/in/ahmed-drioueche-aa02732b7",
         icon: <Linkedin size={18} />,
         ariaLabel: "LinkedIn",
         text: "Connect with us",
@@ -101,8 +96,9 @@ const Footer = () => {
               <a
                 key={index}
                 href={link.href}
-                className="text-sm text-blue-100/80 hover:text-blue-300 transition-colors duration-300"
+                className="text-sm text-blue-100/80 hover:text-blue-300 transition-colors duration-300 cursor-pointer"
                 aria-label={link.ariaLabel}
+                onClick={(e) => e.preventDefault()}
               >
                 {link.label}
               </a>
@@ -116,8 +112,9 @@ const Footer = () => {
               <a
                 key={index}
                 href={link.href}
-                className="text-sm text-blue-100/80 hover:text-blue-300 transition-colors duration-300"
+                className="text-sm text-blue-100/80 hover:text-blue-300 transition-colors duration-300 cursor-pointer"
                 aria-label={link.ariaLabel}
+                onClick={(e) => e.preventDefault()}
               >
                 {link.label}
               </a>
@@ -131,8 +128,9 @@ const Footer = () => {
               <a
                 key={index}
                 href={link.href}
-                className="text-sm text-blue-100/80 hover:text-blue-300 transition-colors duration-300"
+                className="text-sm text-blue-100/80 hover:text-blue-300 transition-colors duration-300 cursor-pointer"
                 aria-label={link.ariaLabel}
+                onClick={(e) => e.preventDefault()}
               >
                 {link.label}
               </a>
@@ -146,8 +144,9 @@ const Footer = () => {
               <a
                 key={index}
                 href={link.href}
-                className="text-sm text-blue-100/80 hover:text-blue-300 transition-colors duration-300"
+                className="text-sm text-blue-100/80 hover:text-blue-300 transition-colors duration-300 cursor-pointer"
                 aria-label={link.ariaLabel}
+                onClick={(e) => e.preventDefault()}
               >
                 {link.label}
               </a>
