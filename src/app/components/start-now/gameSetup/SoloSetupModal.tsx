@@ -4,6 +4,7 @@ import MatchConfig from "./MatchConfig";
 import Button from "@/app/components/ui/Button";
 import { useMatchConfig } from "@/app/hooks/useMatchConfig";
 import { redirectWithMatchConfig } from "@/utils/helper";
+import { MatchConfigI } from "@/types/game/game";
 
 const SoloMatchSetupModal: React.FC<{
   isOpen: boolean;
@@ -11,13 +12,15 @@ const SoloMatchSetupModal: React.FC<{
 }> = ({ isOpen, onClose }) => {
   const [isGameStarted, setIsGameStarted] = useState(false);
   const { matchConfig } = useMatchConfig();
+  const [newMatchConfig, setMatchConfig] = useState<MatchConfigI>(matchConfig);
+
   const handleStartGame = () => {
     setIsGameStarted(true);
 
     const baseUrl =
       process.env.NEXT_PUBLIC_APP_URL || "https://codearena-delta.vercel.app";
 
-    redirectWithMatchConfig(matchConfig, baseUrl);
+    redirectWithMatchConfig(newMatchConfig, baseUrl);
   };
 
   // Close modal when clicking outside
@@ -63,7 +66,11 @@ const SoloMatchSetupModal: React.FC<{
         {/* Scrollable Content */}
         <div className="overflow-y-auto max-h-[calc(100vh-180px)] scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
           <div className="p-6 space-y-8">
-            <MatchConfig gameMode="solo" isGameStarted={isGameStarted} />
+            <MatchConfig
+              gameMode="solo"
+              onChange={(matchConfig) => setMatchConfig(matchConfig)}
+              isGameStarted={isGameStarted}
+            />
           </div>
         </div>
 

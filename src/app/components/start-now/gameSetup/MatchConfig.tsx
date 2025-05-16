@@ -12,10 +12,11 @@ import RadioGroup from "../../ui/RadioGroup";
 
 function MatchConfig({
   gameMode,
-  isGameStarted,
+  onChange,
 }: {
   gameMode: GameMode;
   isGameStarted?: boolean;
+  onChange?: (matchConfig: MatchConfigI) => void;
 }) {
   const { matchConfig } = useMatchConfig();
   const [newMatchConfig, setNewMatchConfig] = useState<MatchConfigI>({
@@ -32,14 +33,17 @@ function MatchConfig({
   const { saveConfig } = useMatchConfig();
 
   useEffect(() => {
-    saveConfig({
+    const updatedConfig: MatchConfigI = {
       gameMode: newMatchConfig.gameMode,
       language: newMatchConfig.language,
       topics: newMatchConfig.topics,
       difficultyLevel: selectedDifficulty,
       timeLimit: selectedTime,
-    });
-  }, [isGameStarted]);
+    };
+
+    saveConfig(updatedConfig);
+    if (onChange) onChange(updatedConfig);
+  }, [newMatchConfig, selectedDifficulty, selectedTime]);
 
   return (
     <div className="space-y-8">
