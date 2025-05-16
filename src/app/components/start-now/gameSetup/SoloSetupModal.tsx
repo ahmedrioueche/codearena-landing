@@ -2,17 +2,22 @@ import React, { useState } from "react";
 import { X, Zap, User } from "lucide-react";
 import MatchConfig from "./MatchConfig";
 import Button from "@/app/components/ui/Button";
+import { useMatchConfig } from "@/app/hooks/useMatchConfig";
+import { redirectWithMatchConfig } from "@/utils/helper";
 
 const SoloMatchSetupModal: React.FC<{
   isOpen: boolean;
   onClose: () => void;
 }> = ({ isOpen, onClose }) => {
   const [isGameStarted, setIsGameStarted] = useState(false);
-
+  const { matchConfig } = useMatchConfig();
   const handleStartGame = () => {
     setIsGameStarted(true);
-    location.href =
+
+    const baseUrl =
       process.env.NEXT_PUBLIC_APP_URL || "https://codearena-delta.vercel.app";
+
+    redirectWithMatchConfig(matchConfig, baseUrl);
   };
 
   // Close modal when clicking outside

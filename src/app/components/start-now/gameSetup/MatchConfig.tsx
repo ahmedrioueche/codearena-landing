@@ -5,11 +5,7 @@ import {
   timeLimits,
   topics,
 } from "@/constants/game";
-import {
-  DifficultyLevel,
-  GameMode,
-  MatchConfigInterface,
-} from "@/types/game/game";
+import { DifficultyLevel, GameMode, MatchConfigI } from "@/types/game/game";
 import { BookOpen, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 import RadioGroup from "../../ui/RadioGroup";
@@ -22,7 +18,8 @@ function MatchConfig({
   isGameStarted?: boolean;
 }) {
   const { matchConfig } = useMatchConfig();
-  const [newMatchConfig, setNewMatchConfig] = useState<MatchConfigInterface>({
+  const [newMatchConfig, setNewMatchConfig] = useState<MatchConfigI>({
+    gameMode: gameMode,
     language: matchConfig?.language || "javascript",
     topics: matchConfig?.topics || topics.filter((t) => t.id === "algorithms"),
     difficultyLevel: matchConfig?.difficultyLevel || "medium",
@@ -36,6 +33,7 @@ function MatchConfig({
 
   useEffect(() => {
     saveConfig({
+      gameMode: newMatchConfig.gameMode,
       language: newMatchConfig.language,
       topics: newMatchConfig.topics,
       difficultyLevel: selectedDifficulty,

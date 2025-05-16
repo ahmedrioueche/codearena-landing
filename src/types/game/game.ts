@@ -41,14 +41,15 @@ export interface ProgrammingLanguageI {
 
 export type ProgrammingLanguageT = (typeof languages)[number]["id"];
 
-export interface MatchConfigInterface {
+export interface MatchConfigI {
+  gameMode?: GameMode;
   language: string;
   topics: string[];
   difficultyLevel: DifficultyLevel;
   timeLimit: string;
 }
 
-export interface DifficultyLevelInterface {
+export interface DifficultyLevelI {
   id: string;
   name: string;
   description: string;

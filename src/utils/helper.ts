@@ -1,4 +1,4 @@
-import { GameMode } from "@/types/game/game";
+import { GameMode, MatchConfigI } from "@/types/game/game";
 import { Award, Clock, Zap } from "lucide-react";
 
 export const getModeBackground = (mode: GameMode) => {
@@ -46,3 +46,19 @@ export const getModeStats = (mode: GameMode) => {
       return [];
   }
 };
+
+export function redirectWithMatchConfig(
+  matchConfig: MatchConfigI,
+  baseUrl: string
+) {
+  const params = new URLSearchParams();
+
+  params.append("gameMode", matchConfig.gameMode!);
+  params.append("language", matchConfig.language);
+  params.append("difficultyLevel", matchConfig.difficultyLevel);
+  params.append("timeLimit", matchConfig.timeLimit);
+  params.append("topics", matchConfig.topics.join(","));
+
+  const fullUrl = `${baseUrl}?${params.toString()}`;
+  window.location.href = fullUrl;
+}
