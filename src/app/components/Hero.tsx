@@ -2,7 +2,7 @@
 import React from "react";
 import { Play, Code } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
 
 const HeroBanner = () => {
   const router = useRouter();
@@ -10,9 +10,9 @@ const HeroBanner = () => {
   return (
     <motion.section
       className="relative mt-16 md:mt-20 mb-24"
-      initial={{ opacity: 0, y: 20 }} // Initial state
-      animate={{ opacity: 1, y: 0 }} // Animate in
-      transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.2 }} // Spring animation
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
     >
       {/* Main Content */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -21,14 +21,14 @@ const HeroBanner = () => {
           {/* Heading */}
           <motion.h1
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight"
-            initial={{ scale: 0.9, opacity: 0 }} // Initial state
-            animate={{ scale: 1, opacity: 1 }} // Animate in
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
             transition={{
               type: "spring",
               stiffness: 100,
               damping: 10,
-              delay: 0.4,
-            }} // Spring animation
+              delay: 0.8,
+            }}
           >
             <span className="text-white">Master Coding in the</span>
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-purple-400 to-pink-300">
@@ -39,9 +39,9 @@ const HeroBanner = () => {
           {/* Description */}
           <motion.p
             className="text-base sm:text-lg text-blue-100 opacity-90 max-w-lg mx-auto md:mx-0"
-            initial={{ opacity: 0, y: 10 }} // Initial state
-            animate={{ opacity: 1, y: 0 }} // Animate in
-            transition={{ duration: 0.6, delay: 0.6 }} // Smooth transition
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1 }}
           >
             Challenge yourself, compete with others, and elevate your
             programming skills with AI-powered guidance tailored to your
@@ -51,9 +51,9 @@ const HeroBanner = () => {
           {/* Buttons */}
           <motion.div
             className="flex flex-wrap gap-4 pt-4 justify-center md:justify-start"
-            initial={{ opacity: 0, y: 10 }} // Initial state
-            animate={{ opacity: 1, y: 0 }} // Animate in
-            transition={{ duration: 0.6, delay: 0.8 }} // Smooth transition
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.2 }}
           >
             <a
               href="/#start-now"
@@ -80,9 +80,9 @@ const HeroBanner = () => {
           {/* Developer Count */}
           <motion.div
             className="flex items-center space-x-4 pt-4 justify-center md:justify-start"
-            initial={{ opacity: 0, y: 10 }} // Initial state
-            animate={{ opacity: 1, y: 0 }} // Animate in
-            transition={{ duration: 0.6, delay: 1 }} // Smooth transition
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.4 }}
           >
             <div className="flex -space-x-2">
               {[1, 2, 3, 4].map((i) => (
@@ -108,14 +108,14 @@ const HeroBanner = () => {
         {/* Right Column: Code Challenge Card */}
         <motion.div
           className="relative z-10 mt-8 md:mt-0"
-          initial={{ opacity: 0, y: 20 }} // Initial state
-          animate={{ opacity: 1, y: 0 }} // Animate in
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{
             type: "spring",
-            stiffness: 100,
-            damping: 10,
-            delay: 1.2,
-          }} // Spring animation
+            stiffness: 300,
+            damping: 15,
+            delay: 0.1,
+          }}
         >
           <article className="relative bg-gray-900 bg-opacity-50 p-4 sm:p-6 rounded-lg border border-gray-700 shadow-xl backdrop-blur-sm">
             <div className="absolute -top-3 -left-3 w-6 h-6 rounded-full bg-gradient-to-r from-blue-400 to-purple-500" />
