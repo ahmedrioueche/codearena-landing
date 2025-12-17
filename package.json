@@ -12,7 +12,7 @@
     "@google/generative-ai": "^0.21.0",
     "framer-motion": "^12.5.0",
     "lucide-react": "^0.471.1",
-    "next": "15.1.4",
+    "next": "15.1.11",
     "qtrans": "^1.7.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
